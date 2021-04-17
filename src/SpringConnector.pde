@@ -31,8 +31,6 @@ class SpringConnector{
 			acc.x+=-df.x/l*(l-this.len)*this.k;
 			acc.y+=-df.y/l*(l-this.len)*this.k;
 		}
-		// acc.x*=dt;
-		// acc.y*=dt;
 		if (this.m==SPRING_MODE_BOTH){
 			this.a.v.add(acc);
 			this.b.v.add(-acc.x,-acc.y);
