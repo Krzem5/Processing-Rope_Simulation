@@ -1,6 +1,5 @@
 final int SPRING_MODE_BOTH=0;
-final int SPRING_MODE_ONLY_A=1;
-final int SPRING_MODE_ONLY_B=2;
+final int SPRING_MODE_ONLY_B=1;
 
 
 
@@ -31,15 +30,14 @@ class SpringConnector{
 			acc.x+=-df.x/l*(l-this.len)*this.k;
 			acc.y+=-df.y/l*(l-this.len)*this.k;
 		}
+		acc.x*=dt;
+		acc.y*=dt;
 		if (this.m==SPRING_MODE_BOTH){
-			this.a.v.add(acc);
-			this.b.v.add(-acc.x,-acc.y);
-		}
-		else if (this.m==SPRING_MODE_ONLY_A){
-			this.a.v.add(acc.x*2,acc.y*2);
+			this.a.v.add(acc.x/this.a.m,acc.y/this.a.m);
+			this.b.v.add(-acc.x/this.b.m,-acc.y/this.b.m);
 		}
 		else{
-			this.b.v.add(-acc.x*2,-acc.y*2);
+			this.b.v.add(-acc.x*2/this.b.m,-acc.y*2/this.b.m);
 		}
 	}
 }
