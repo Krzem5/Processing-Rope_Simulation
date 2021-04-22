@@ -9,7 +9,7 @@ import zipfile
 SETUP_FUNC_REGEX=re.compile(br"(?:^|\s|;)void\s+setup\s*\([^\)]*?\)\s*\{",re.M)
 FUNCTION_DECLARATION_REGEX=re.compile(br"((?:^|\s|;)\s*)((?:public|private|protected|final|static|abstract|transient|synchronized|volatile)\s+)*([a-zA-Z0-9_]+)(?:\s*\[\s*\])?\s+[a-zA-Z0-9_]+\s*\(",re.M)
 IMPORT_REGEX=re.compile(br"(?:^|\s|;)(import\s+(?:static\s+)?[a-zA-Z0-9_$.]+(?:\.\*)?)")
-FLOAT_REGEX=re.compile(br"(?:[0-9]*\.[0-9]+|[0-9]*(?:\.[0-9]+)?e-?[0-9]+)\b")
+FLOAT_REGEX=re.compile(br"[0-9]*\.[0-9]+\b")
 PROCESSING_SETTING_METHODS=[b"smooth",b"noSmooth",b"size",b"pixelDensity",b"fullScreen"]
 IDENTIFIER_CHARS=b"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"
 WHITE_SPACE_CHARS=b" \t\n\r\f\v"
